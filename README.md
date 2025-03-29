@@ -1,55 +1,64 @@
-# Instagram Auto DM Bot (Controlled via Telegram)
+# Project Name
 
-This bot allows you to send automated Instagram DMs using the `instagrapi` library, with a Telegram bot as the control interface. It enables sending messages to multiple recipients while maintaining compliance with rate limits.
+## Overview
+This project automates interactions with a Telegram bot and integrates with an Instagram scraping tool. The bot allows users to scrape Instagram data such as posts, hashtags, bios, and complete user details.
 
 ## Features
-- **Login via Telegram**: Securely log in to your Instagram account through a Telegram bot.
-- **Send Mass DMs**: Send messages to multiple users in a controlled manner.
-- **Avoid Rate Limits**: Uses delays between actions to reduce detection risk.
-- **Easy Setup**: Requires only Python, `instagrapi`, and Telegram Bot API.
+- **Telegram Bot Integration** using `TeleBot`
+- **Instagram Scraper** with `Instaloader`
+- **Command-Based Interaction**
+  - `/posts` - Scrape all posts
+  - `/hashtag` - Scrape posts related to a specific hashtag
+  - `/bio` - Scrape Instagram bio
+  - `/all` - Scrape all details (posts, bio, followers, followings, etc.)
+  - `/stop` - Stop all scraping processes
 
-## Requirements
-- Python 3.8+
-- `instagrapi` for Instagram automation
-- `pyTelegramBotAPI` for Telegram bot functionality
-- `dotenv` (optional) for environment variable management
+## Project Structure
+```
+📂 project-root/
+├── 📂 scripts/
+│   ├── instagram_scraper.py  # Handles Instagram scraping
+│   ├── telegram_bot.py       # Telegram bot logic
+│   ├── utils.py              # Utility functions
+│
+├── 📂 data/
+│   ├── scraped_data.json     # Stores extracted data
+│
+├── requirements.txt          # List of required dependencies
+├── config.py                 # Configuration file
+├── README.md                 # Project documentation
+```
 
 ## Installation
+### Prerequisites
+- Python 3.x
+- `pip` (Python package manager)
+- Telegram bot token
+
+### Steps
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
+   ```sh
+   git clone https://github.com/yourusername/repo-name.git
+   cd repo-name
    ```
-2. Install required dependencies:
-   ```bash
+2. Install dependencies:
+   ```sh
    pip install -r requirements.txt
    ```
-3. Set up a Telegram bot:
-   - Go to [BotFather](https://t.me/BotFather) on Telegram.
-   - Create a new bot and get the `BOT_TOKEN`.
-   - Update the `.env` file with your token.
-
-4. Set up Instagram credentials securely (DO NOT hardcode them in the script!):
-   - Use `.env` file or input them at runtime.
+3. Configure the bot:
+   - Edit `config.py` to add your Telegram bot token.
 
 ## Usage
-1. Start the bot:
-   ```bash
-   python bot.py
-   ```
-2. Open Telegram and interact with your bot.
-3. Send `/login` to authenticate your Instagram account.
-4. Use `/send_message <username> <message>` to send a DM.
-5. To send bulk messages, use `/send_bulk <message>` (ensure recipient list is predefined).
+Run the Telegram bot:
+```sh
+python scripts/telegram_bot.py
+```
 
-## Important Notes
-- **Avoid spam!** Instagram may restrict accounts for excessive automated actions.
-- **Security**: Do not share credentials publicly or hardcode them in scripts.
-- **Use responsibly** to avoid violating Instagram’s policies.
+The bot will listen for user commands and respond accordingly. Use the commands listed in the Features section.
 
-## Contributing
-Feel free to submit issues or pull requests to improve the bot.
+## Stopping the Bot
+Use the `/stop` command to halt all ongoing scraping operations.
 
 ## License
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License.
 
