@@ -1,4 +1,4 @@
-# Instagram Spam Bot
+# Instagram Spam Bot (telegram version)
 
 A Telegram-controlled bot that allows you to log into multiple Instagram accounts and send direct messages (DMs) to users or groups, either as single messages or random messages from a predefined list. Built with Python, this bot leverages the `instagrapi` library for Instagram interactions and `telebot` for Telegram integration.
 
