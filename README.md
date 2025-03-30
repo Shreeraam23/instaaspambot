@@ -303,3 +303,100 @@ Created by [Your Name] - A simple tool for Instagram messaging enthusiasts!
 - The script currently lacks session persistence; each run requires a new login.
 
 Let me know if you’d like to adjust anything or add more details!
+
+Here’s a concise and clear README for your third project, written quickly based on the provided code.
+
+---
+
+# Instagram Message Spammer (Basic v2 version)
+
+A simple Python script to send predefined messages to an Instagram user or group using the `instagrapi` library. This command-line tool supports 2FA and logs all actions for debugging.
+
+---
+
+## Features
+- Send a fixed list of messages to a user or group.
+- Supports Instagram 2FA authentication.
+- Logs actions to `instagrapi_messages.log`.
+- Simple command-line interface.
+
+---
+
+## Prerequisites
+- **Python 3.8+**
+- **Instagram Account**: Username and password required.
+- **Target Info**: Username for users or group name for groups.
+
+---
+
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/instagram-message-spammer.git
+   cd instagram-message-spammer
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   pip install instagrapi
+   ```
+
+---
+
+## Usage
+
+1. **Run the Script**:
+   ```bash
+   python main.py
+   ```
+
+2. **Follow Prompts**:
+   - Enter your Instagram username and password.
+   - Provide a 2FA code if prompted.
+   - Choose to send to a user (1) or group (2).
+   - Enter the target username or group name.
+   - Watch the script send predefined messages in a loop.
+
+3. **Logs**:
+   - Check `instagrapi_messages.log` for details.
+
+### Example
+```
+Enter your Instagram username: myuser
+Enter your Instagram password: [hidden]
+Send messages to a [1] User or [2] Group? (1/2): 1
+Enter the target's Instagram username: targetuser
+Sent: msg 1
+Sent: msg 2
+...
+```
+
+---
+
+## How It Works
+- **Login**: Authenticates with Instagram, handling 2FA if needed.
+- **Target**: Retrieves user ID from username or group ID from name.
+- **Messages**: Sends a hardcoded list of messages (`msg 1`, `msg 2`, etc.) in an infinite loop.
+- **Logout**: Logs out when interrupted.
+
+---
+
+## Contributing
+Fork, branch, and submit a pull request with improvements (e.g., custom message input, finite loops).
+
+---
+
+## License
+MIT License - see [LICENSE](LICENSE).
+
+---
+
+## Notes
+- Replace `your-username` with your GitHub username.
+- Use responsibly—Instagram may restrict excessive messaging.
+- Edit `messages` list in the code to customize.
+
+---
+
+Let me know if you need changes!
