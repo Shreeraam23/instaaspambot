@@ -1,14 +1,17 @@
-FROM python:3.10.4-slim-buster
-RUN apt update && apt upgrade -y
-RUN apt-get install git curl python3-pip ffmpeg -y
-RUN apt-get -y install git
-RUN apt-get install -y wget python3-pip curl bash neofetch ffmpeg software-properties-common
-COPY requirements.txt .
+# Use the official Python image as the base image
+FROM python:3.9-slim-buster
 
-RUN pip3 install wheel
-RUN pip3 install --no-cache-dir -U -r requirements.txt
-WORKDIR /app
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the requirements file into the container
+COPY requirements.txt ./
+
+# Install the required dependencies
+RUN pip install -r requirements.txt
+
+# Copy the rest of the application code into the container
 COPY . .
-EXPOSE 5000
 
-CMD flask run -h 0.0.0.0 -p 5000
+# Run the application
+CMD ["python", "main.py"]
