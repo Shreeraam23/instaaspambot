@@ -11,7 +11,7 @@ import random
 
 # Configuration
 TELEGRAM_BOT_TOKEN = "7764836417:AAGCiXLa-vFUCLplAzknMmzTjwpDp0yTcn4"
-OWNER_IDS = [7369976226,7576455886]  # Authorized users's user id
+OWNER_IDS = [7369976226, 7576455886]  # Authorized users's user id
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
 # Logging setup with detailed debugging
