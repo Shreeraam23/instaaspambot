@@ -5,3 +5,6 @@ aiohttp
 Flask
 gunicorn
 instagrapi
+selenium
+python-dotenv
+webdriver-manager  # Add this for automated browser driver setup
